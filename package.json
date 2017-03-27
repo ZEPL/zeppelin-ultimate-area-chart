@@ -1,0 +1,36 @@
+{
+  "name": "ultimate-area-chart",
+  "version": "0.0.1",
+  "description": "The Ultimate Area Chart for Apache Zeppelin using <a href src=\"https://www.amcharts.com/\">amcharts</a>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "zeppelin",
+    "helium",
+    "visualization",
+    "ultimate"
+  ],
+  "author": "1ambda",
+  "license": "SEE LICENSE IN <LICENSE>",
+  "dependencies": {
+    "amcharts3": "amcharts/amcharts3",
+    "amcharts3-export": "amcharts/export",
+    "human-format": "^0.8.0",
+    "zeppelin-tabledata": "*",
+    "zeppelin-vis": "*"
+  },
+  "helium": {
+    "icon": "<img width=\"21\" height=\"21\" class=\"icon icons8-Line-Chart\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAE+klEQVRoQ+2Za0xbZRjH/+ecnlLsdSDlUimXshawY+UyNnQh20e5DRMTNfGyL0tMZoImumwlBvjg1MVkS9wXs5ip07jExEywzOiHwdDEoVGRD2b6QRkbjkLpnZa2p8ecauc6aPv2Rujk/fq+7/M8v+f/Pu/lHAr3SaPuEw7kNUiX2WIaP9n9syBGXoL0HB87wNDMBR78e6Mnu4fzDqR/+IqKW/MOURT1EsMw4DhuJO9Aek+M99M0LrAsKzYY9OK5uRtwuVzZAYlkKLB6muL5CZpnJi+9+dif2d48+o9fruYZnOX5cLdWWwnNQxqIGAYzM7PZA+kbHJ8Ss+w+AKFAICChGfo6F+IuA/SlsTe6JjOF6jNbBiiKel0ikbD1DQaxTCq9YzJrIH1myxmaZo62tTaLCiQF8Hi9cDqcWLIu+90et4SiKC9ATfBh7tNU1RJ2IxFFvcOA3ltVo2U1mop1OckKSK/ZcpgCzje3mHB3lqLeQhwXgbItL8PucPpTUavPbBkCMCyXy0MN9YZIkjZqGYNEsgX8pNfvRGmpmmj1kKgV3VIpmi6rr9eLiouLEtrOCEQobj6wekOtLpHrDXoiiHsHxVMrzIUNpeoS1NbpIsWcrGUEcmhw/JfCQklja2tLck/JIvm3P6qWVCqFSqUknIX0d61es+W8iKafbd/XzpBkjDiiNAempUiy4k4zloympQySTnFnFCHh5JRA/jlV+dny8jKZTldL6GJzhhGDRHaooP9bmUyqN5maRJsTHrkXYpBDr335McswT7S2tYi3QnHfi0gE0nviC+Ga/NZuU1PM/YY8X7kfmRREOGFpmr6Sysmd+7DXe0gIIuxQLEVNbcXiXre0Zn/EanD+3c8Gn39B6Lvz1BWKG5z/O6VSWWt8uJElyTLH++FYnYVCogfLkJ/KJLbjjQlyTtx2XYXL9yv8LtXkxZePHYgB6TNbhlmWfbVtT+sDJMXt8v+Gm/ZRcOFAxGeBSAFZgQEySVUELNtN8GfzXoPHP48HlUXwra3CviTbGEQmlQ40t5hUiYIQVFh0TsHm/R67anTYrauD1+/DvNWKBdsKFmzWyHRF4U7ICqozUiuquM1zDWshF2rLK1CvrUaRXI6vfpjGzXkmPRDP2hwWHGOgmSAOmpojBjdq80tWLK7YMGddgm/Nl7JawvJZck/D6ZsBKB4NWi0aqqogFv234tMCuVuF+kotmnR1MUYTKZiKWkKibN5puHy/QylVoLFaC125ZkPzKYP4gotYcHwOnvJiv9GI0h2JHzzJaiOeWu616wiEXKgp06BOU5HUT0ogVvc3WHRdRUWxGvt3GYlVSAYT7Y+q9deKDUVyBeo0GkglhUTTiUAEFW7ZRxEMO/Co0YjKErInLVEEWRqUFERrCKoWHF/nTIUsccTftR4fuXhGXvrHUZHYI9rTYIhbZNkKJFM7cRV56vSpCXmxp7OrvZ0iXaeZBpPJ/IQg6jKus6ejPS++0CcEKSnjOnvzHeTpsyPvlxQzT/Z0dEgykXyz5gqK3Lod+OCTF4cOx1wanzt3bHiHQj7QvfeRhHetzQo0mR8BxGq3j3x45FTsj55tkGSpy1H/tiI5SmzaZrcVSTt1OZq4rUiOEpu22f+HIizLDBbJFVvug/VGstndbgSCofUn+zPnXjlAg4587MqXFkZ44qMjb0/E3LXyJfh4cebF24MkyX8DpFkiYFDvs/EAAAAASUVORK5CYII=\" >",
+    "license": "<a href=\"https://www.amcharts.com/licenses/javascript-charts-free-license\">Amcharts License</a>"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1ambda/zeppelin-ultimate-area-chart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/1ambda/zeppelin-ultimate-area-chart/issues"
+  },
+  "homepage": "https://github.com/1ambda/zeppelin-ultimate-area-chart#readme"
+}
