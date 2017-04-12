@@ -2,6 +2,8 @@
 
 The Ultimate Area Chart for Apache Zeppelin using [amcharts](https://www.amcharts.com/)
 
+![](https://raw.githubusercontent.com/ZEPL/zeppelin-ultimate-area-chart/master/screenshots/640.gif)
+
 ## Compatibility
 
 | Chart Version | Zeppelin Version |
