@@ -21,7 +21,15 @@ export function createStackedAreaGraph(parameter, selectors) {
 }
 
 export function createStackedAreaChartOption(graphs, data, parameter, keyColumnNames) {
+  const { showLegend, } = parameter
+
   const option = createCommonChartOption(graphs, data, parameter, keyColumnNames)
-  option.valueAxes[0].stackType = "regular"
+  option.valueAxes[0].stackType = 'regular'
+
+  if (showLegend) {
+    option.legend.periodValueText = 'total: [[value.sum]]'
+    option.legend.valueText = '[[value]] ([[percents]]%)'
+  }
+
   return option
 }

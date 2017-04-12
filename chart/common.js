@@ -4,18 +4,25 @@ export const CommonParameter = {
   'graphLineThickness': { valueType: 'int', defaultValue: 1, description: 'thickness for graph line', },
   'graphLineAlpha': { valueType: 'int', defaultValue: 0.5, description: 'alpha for graph line', },
   'graphFillAlpha': { valueType: 'int', defaultValue: 0.4, description: 'alpha for graph area', },
-  'bulletType': { valueType: 'string', defaultValue: 'none', description: 'type of bullet', widget: 'option', optionValues: [ 'none', 'round', 'round-white', ], },
   'balloonType': { valueType: 'string', defaultValue: 'simple', description: 'type of balloon', widget: 'option', optionValues: [ 'simple', 'color', 'drop-shaped', ], },
-  'yAxisValueInside': { valueType: 'boolean', defaultValue: true, description: 'show yAxis value inside of plot', widget: 'checkbox', },
+  'hideBulletsCount': { valueType: 'int', defaultValue: 50, description: 'bullets will be shown until this count', },
   'yAxisValueFormat': { valueType: 'string', defaultValue: 'none', description: 'the format of yAxis value', widget: 'option', optionValues: [ 'none', 'no-comma', 'compact-int', 'binary-size', 'second', ], },
   'yAxisValuePrecision': { valueType: 'int', defaultValue: 2, description: 'yAxisValue precision that for <code>compact-int</code>, <code>binary-size</code>, <code>second</code>', },
+  'yAxisValueInside': { valueType: 'boolean', defaultValue: true, description: 'show yAxis value inside of plot', widget: 'checkbox', },
   'showXAxisScroll': { valueType: 'boolean', defaultValue: false, description: 'show xAxis scroll', widget: 'checkbox', },
   'showYAxisScroll': { valueType: 'boolean', defaultValue: true, description: 'show yAxis scroll', widget: 'checkbox', },
+  'chartMarginLeft': { valueType: 'int', defaultValue: 15, description: 'left margin of chart', },
+  'chartMarginRight': { valueType: 'int', defaultValue: 15, description: 'right margin of chart', },
+  'showLegend': { valueType: 'boolean', defaultValue: true, description: 'show legend', widget: 'checkbox', },
+  'legendValueText': { valueType: 'string', defaultValue: '', description: 'text format of legend (<a href="https://docs.amcharts.com/3/javascriptcharts/AmGraph#legendValueText">doc</a>)', },
+  'legendPosition': { valueType: 'string', defaultValue: 'bottom', description: 'position of legend', widget: 'option', optionValues: [ 'bottom', 'top', 'left', 'right', ], },
+  'legendValueWidth': { valueType: 'int', defaultValue: 50, description: 'value width of legends', },
   'xAxisPosition': { valueType: 'string', defaultValue: 'bottom', description: 'xAxis position', widget: 'option', optionValues: [ 'bottom', 'top', ], },
   'yAxisPosition': { valueType: 'string', defaultValue: 'left', description: 'yAxis position', widget: 'option', optionValues: [ 'left', 'right', ], },
+  'rotateXAxisLabel': { valueType: 'int', defaultValue: 0, description: 'rotate xAxis labels', },
+  'rotateYAxisLabel': { valueType: 'int', defaultValue: 0, description: 'rotate yAxis labels', },
+  'bulletType': { valueType: 'string', defaultValue: 'none', description: 'type of bullet', widget: 'option', optionValues: [ 'none', 'round', 'round-white', ], },
   'balloonText': { valueType: 'string', defaultValue: '', description: 'text format of balloon (<a href="https://docs.amcharts.com/3/javascriptcharts/AmGraph#balloonText">doc</a>)', },
-  'legendValueText': { valueType: 'string', defaultValue: '', description: 'text format of legend (<a href="https://docs.amcharts.com/3/javascriptcharts/AmGraph#legendValueText">doc</a>)', },
-  'hideBulletsCount': { valueType: 'int', defaultValue: 50, description: 'bullets will be shown until this count', },
   'yAxisGuides': { valueType: 'JSON', defaultValue: '', description: 'guides of yAxis (<a href="https://docs.amcharts.com/3/javascriptcharts/ValueAxis#guides">doc</a>) (<a href="https://www.amcharts.com/demos/logarithmic-scale/">example</a>)', widget: 'textarea', },
   'trendLines': { valueType: 'JSON', defaultValue: '', description: 'trend lines (<a href="https://docs.amcharts.com/3/javascriptcharts/TrendLine">doc</a>) (<a href="https://www.amcharts.com/demos/trend-lines/">example</a>)', widget: 'textarea', },
   'mainTitle': { valueType: 'string', defaultValue: '', description: 'main title of chart', },
@@ -25,9 +32,6 @@ export const CommonParameter = {
   'xAxisUnit': { valueType: 'string', defaultValue: '', description: 'unit of xAxis', },
   'yAxisUnit': { valueType: 'string', defaultValue: '', description: 'unit of yAxis', },
   'logarithmicYAxis': { valueType: 'boolean', defaultValue: false, description: 'use logarithmic scale in yAxis', widget: 'checkbox', },
-  'rotateXAxisLabel': { valueType: 'string', defaultValue: 'none', description: 'rotate xAxis labels', widget: 'option', optionValues: [ 'none', '+90', '-90', ], },
-  'showLegend': { valueType: 'boolean', defaultValue: true, description: 'show legend', widget: 'checkbox', },
-  'legendPosition': { valueType: 'string', defaultValue: 'bottom', description: 'position of legend', widget: 'option', optionValues: [ 'bottom', 'top', 'left', 'right', ], },
   'inverted': { valueType: 'boolean', defaultValue: false, description: 'invert x and y axes', widget: 'checkbox', },
   'graphType': { valueType: 'string', defaultValue: 'line', description: 'graph type', widget: 'option', optionValues: [ 'line', 'smoothedLine', ], },
   'dateFormat': { valueType: 'string', defaultValue: '', description: 'format of date (<a href="https://docs.amcharts.com/3/javascriptcharts/AmGraph#dateFormat">doc</a>) (e.g YYYY-MM-DD)', },
@@ -93,12 +97,12 @@ export function createCommonChartGraphs(parameter, selectors) {
 export function createCommonChartOption(graphs, data, parameter, keyColumnName) {
   const {
     dateFormat,
-    inverted, logarithmicYAxis, rotateXAxisLabel,
-    balloonType, showLegend, legendPosition,
+    inverted, logarithmicYAxis, rotateXAxisLabel, rotateYAxisLabel,
+    balloonType, showLegend, legendPosition, legendValueWidth,
     xAxisPosition, yAxisPosition, showXAxisScroll, showYAxisScroll,
     yAxisGuides, trendLines,
     xAxisName, yAxisName, yAxisValueFormat, yAxisValuePrecision, yAxisValueInside,
-    mainTitle, subTitle,
+    mainTitle, subTitle, chartMarginLeft, chartMarginRight,
   } = parameter
 
   const option = {
@@ -106,8 +110,8 @@ export function createCommonChartOption(graphs, data, parameter, keyColumnName) 
     type: 'serial',
     theme: 'light',
     rotate: inverted,
-    marginRight: 15,
-    marginLeft: 15,
+    marginLeft: chartMarginLeft,
+    marginRight: chartMarginRight,
     autoMarginOffset: 20,
     dataDateFormat: (dateFormat) ? dateFormat : undefined,
     categoryField: keyColumnName,
@@ -115,7 +119,7 @@ export function createCommonChartOption(graphs, data, parameter, keyColumnName) 
       parseDates: (dateFormat), dashLength: 1, minorGridEnabled: true,
       title: (xAxisName) ? xAxisName : undefined,
       position: xAxisPosition,
-      labelRotation: (rotateXAxisLabel === 'none') ? 0 : (rotateXAxisLabel === '+90') ? 90 : -90,
+      labelRotation: rotateXAxisLabel,
     },
     trendLines: (Array.isArray(trendLines)) ? trendLines : [],
     valueAxes: [{
@@ -124,6 +128,7 @@ export function createCommonChartOption(graphs, data, parameter, keyColumnName) 
       position: yAxisPosition,
       guides: (Array.isArray(yAxisGuides)) ? yAxisGuides : [],
       logarithmic: logarithmicYAxis,
+      labelRotation: rotateYAxisLabel,
     }],
     graphs: graphs,
     balloon: { borderThickness: 0.8, shadowAlpha: 0 },
@@ -142,7 +147,10 @@ export function createCommonChartOption(graphs, data, parameter, keyColumnName) 
   }
 
   if (showLegend) {
-    option.legend = { align: 'center', equalWidths: true, position: legendPosition, }
+    option.legend = {
+      align: 'center', equalWidths: false, position: legendPosition,
+      valueWidth: legendValueWidth,
+    }
   }
 
   if (balloonType === 'drop-shaped') { option.balloon.borderThickness = 0.3 }
